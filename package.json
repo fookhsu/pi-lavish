@@ -1,0 +1,14 @@
+{
+  "name": "pi-lavish",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Lavish Editor (lavish-axi) 的 pi 集成：后台长轮询用户反馈，完成即唤醒 agent 新回合。",
+  "keywords": ["pi-package", "lavish", "lavish-axi", "html", "review"],
+  "pi": {
+    "extensions": ["./extensions"]
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json"
+  }
+}
