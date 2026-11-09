@@ -30,16 +30,27 @@ agent 改 HTML → npx -y lavish-axi reply … "改了什么" ──→ 扩展�
 | `Send & End` / `browser_disconnected` | 前者停止监听并告知；后者把「询问用户重开还是结束」交给模型，不擅自决定 |
 | `session_shutdown` | 清空所有监听，不留孤儿 poll |
 
-## 安装（本地开发形态）
+## 安装
 
 ```sh
-cd ~/workspace/pi-lavish
-pi install ./            # 写进 ~/.pi/agent/settings.json
+pi install npm:pi-lavish
+```
+
+装完 `/reload` 或重开 pi。验证：`/lavish-status` 应显示「未监听」。
+
+从仓库源码装（开发用）：
+
+```sh
+git clone https://github.com/fookhsu/pi-lavish && cd pi-lavish
+pi install ./
 # 或只在当前项目：pi install ./ -l
 # 或临时试一次：pi -e ~/workspace/pi-lavish
 ```
 
-装完 `/reload` 或重开 pi。验证：`/lavish-status` 应显示「未监听」。
+### 装不上时的两个坑
+
+- **`ETARGET: No matching version found`**：npm 本地元数据缓存还没同步。用 `npm i pi-lavish@<version> --prefer-online`，或删掉 `package-lock.json` 重试。
+- **装到了 `0.0.0-stage`**：那是 npm 给新包首发时放的公开占位版本（“Temporary package placeholder for staged publishing”），不含扩展代码。显式指定版本即可：`pi install npm:pi-lavish@0.1.1`。
 
 ## 命令与工具
 

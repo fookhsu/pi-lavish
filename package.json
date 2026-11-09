@@ -1,6 +1,6 @@
 {
   "name": "pi-lavish",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Lavish Editor (lavish-axi) integration for pi: background feedback polling that wakes a fresh turn instead of blocking the running one.",
   "type": "module",
   "license": "MIT",
