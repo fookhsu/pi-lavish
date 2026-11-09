@@ -1,12 +1,38 @@
 {
   "name": "pi-lavish",
   "version": "0.1.0",
-  "private": true,
+  "description": "Lavish Editor (lavish-axi) integration for pi: background feedback polling that wakes a fresh turn instead of blocking the running one.",
   "type": "module",
-  "description": "Lavish Editor (lavish-axi) 的 pi 集成：后台长轮询用户反馈，完成即唤醒 agent 新回合。",
-  "keywords": ["pi-package", "lavish", "lavish-axi", "html", "review"],
+  "license": "MIT",
+  "author": "fookhsu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fookhsu/pi-lavish.git"
+  },
+  "homepage": "https://github.com/fookhsu/pi-lavish#readme",
+  "bugs": {
+    "url": "https://github.com/fookhsu/pi-lavish/issues"
+  },
+  "keywords": [
+    "pi-package",
+    "pi",
+    "lavish",
+    "lavish-axi",
+    "html",
+    "review",
+    "extension"
+  ],
+  "files": [
+    "extensions",
+    "README.md"
+  ],
   "pi": {
-    "extensions": ["./extensions"]
+    "extensions": [
+      "./extensions"
+    ]
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-coding-agent": "*"
   },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json"
